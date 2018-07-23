@@ -1,5 +1,4 @@
 function showRepositories(event, data) {
-  debugger;
   let repos = JSON.parse(this.responseText)
   console.log(repos)
   const repoList = `<ul>${repos.map(r => '<li>' + r.name + ' - <a href="#" date-repo" ' + r.name + '" onclick="getCommits(this)">Get Commits</a></li>').join('')}</ul>`
@@ -20,6 +19,7 @@ function showCommits() {
 }
 
 function getCommits(el) {
+  debugger;
   const name = el.dataset.repos
   const req = new XMLHttpRequest()
   req.addEventListener("load", showCommits);
